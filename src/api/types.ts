@@ -270,3 +270,13 @@ export interface DataSourceParameters {
   name: string;
   config?: Record<string, any>;
 }
+
+export interface ReferencedForm {
+  formName: string;
+  alias: string;
+}
+
+export interface FormComponent {
+  alias: string;
+  component: OHRIFormSchema;
+}
