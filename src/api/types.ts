@@ -133,6 +133,7 @@ export interface OHRIFormSection {
   questions: Array<OHRIFormField>;
   inlineRendering?: 'single-line' | 'multiline' | 'automatic';
   readonly?: string | boolean;
+  reference?: FormReference;
 }
 
 export interface OHRIFormQuestionOptions {
@@ -271,12 +272,14 @@ export interface DataSourceParameters {
   config?: Record<string, any>;
 }
 
+export interface FormReference {
+  form: string;
+  page: string;
+  section: string;
+  excludeQuestions?: Array<string>;
+}
+
 export interface ReferencedForm {
   formName: string;
   alias: string;
-}
-
-export interface FormComponent {
-  alias: string;
-  component: OHRIFormSchema;
 }
